@@ -1,0 +1,25 @@
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact'; 
+import Footer from './components/Footer';
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <main>
+        <Hero />
+       <About />
+       <Projects/>
+       <Skills/>
+        <section id="about" className="h-screen bg-slate-50"></section>
+        <Contact />
+      </main>
+      <Footer/>
+    </div>
+  );
+}
+
+export default App;
