@@ -7,7 +7,6 @@ const About = () => {
     <section id="about" className="py-24 bg-slate-900 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header: Matches Hero Subheader Style */}
         <div className="mb-16">
           <motion.p 
             initial={{ opacity: 0, x: -20 }}
@@ -24,7 +23,6 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
-          {/* Left Column: The Story & CV */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +34,6 @@ const About = () => {
               <span className="text-white"> Frontend Web Developer</span> passionate about building modern, responsive, and user-friendly web applications.
             </p>
             
-            {/* Focus Card: Glassmorphism look */}
             <div className="bg-slate-900/50 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 space-y-4 hover:border-cyan-500/30 transition-colors duration-500">
               <div className="flex items-center gap-3 text-cyan-400 font-black uppercase tracking-widest text-sm">
                 <Target size={22} strokeWidth={3} />
@@ -61,7 +58,6 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: The Roadmap */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -70,7 +66,6 @@ const About = () => {
           >
             <div className="relative pl-10 border-l border-white/10 space-y-12">
               
-              {/* Future Goal Section */}
               <div className="relative">
                 <div className="absolute -left-13.25 top-0 bg-linear-to-br from-cyan-400 to-indigo-600 p-3 rounded-2xl text-white shadow-[0_0_20px_rgba(79,70,229,0.4)]">
                   <Rocket size={20} />
@@ -82,7 +77,6 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Skills Grid: Attractive Icons */}
               <div className="grid sm:grid-cols-2 gap-8 pt-4">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-white font-black uppercase tracking-tighter">
@@ -109,7 +103,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Mindset Card: Bold Gradient */}
               <div className="relative group overflow-hidden bg-linear-to-br from-indigo-600 to-violet-800 p-8 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-900/20">
                 <h4 className="text-xl font-black mb-3 flex items-center gap-3">
                   🌱 Mindset & Growth
@@ -118,7 +111,6 @@ const About = () => {
                   I believe in continuous learning and building real-world projects. My long-term goal is to 
                   transform complex ideas into impactful digital solutions.
                 </p>
-                {/* Decorative glow element */}
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-700"></div>
               </div>
 

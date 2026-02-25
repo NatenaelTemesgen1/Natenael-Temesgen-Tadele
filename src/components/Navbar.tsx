@@ -3,15 +3,18 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+useEffect(() => {
+  // 1. Define the function
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 20);
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // 2. Add listener using the EXACT same name
+  window.addEventListener('scroll', handleScroll);
 
+  // 3. Remove listener using the EXACT same name
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
