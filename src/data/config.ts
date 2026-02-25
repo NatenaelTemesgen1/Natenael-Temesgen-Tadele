@@ -6,7 +6,7 @@ export const me = {
   
   description: "I am a dedicated Frontend Architect with a deep passion for crafting high-performance, accessible, and visually stunning digital experiences. With expertise in React, TypeScript, and modern styling engines like Tailwind v4, I bridge the gap between complex backend logic and intuitive user interfaces. My approach focuses on clean architecture, ensuring that every codebase I touch is scalable, maintainable, and optimized for the ultimate user journey.",
   
-  profileImage: "/photo_2026-02-24_14-23-58.jpg",
+  profileImage: "/photo_2026-02-23_23-20-19.jpg",
   
   socials: {
     github: "https://github.com/NatenaelTemesgen1",

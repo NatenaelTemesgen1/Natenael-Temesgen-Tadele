@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react'; 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,9 +30,17 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="shrink-0">
             {/* Logo matches the Hero color cycle style */}
-            <span className="text-2xl font-black tracking-tighter cursor-pointer bg-linear-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">
+<a 
+  href="#home" 
+  onClick={(e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+  className="cursor-pointer"
+>            <span className="text-2xl font-black tracking-tighter cursor-pointer bg-linear-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">
               NT.
             </span>
+            </a>
           </div>
 
           {/* Desktop Menu */}

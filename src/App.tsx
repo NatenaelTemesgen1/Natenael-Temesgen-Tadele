@@ -14,7 +14,6 @@ function App() {
        <About />
        <Projects/>
        <Skills/>
-        <section id="about" className="h-screen bg-slate-50"></section>
         <Contact />
       </main>
       <Footer/>
