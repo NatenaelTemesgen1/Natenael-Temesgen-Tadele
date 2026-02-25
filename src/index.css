@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1; /* Indigo */
+  --color-secondary: #06b6d4; /* Cyan */
+  --color-accent: #ec4899; /* Pink */
+  
+  --color-slate-900: #030712;
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  --animation-shimmer: shimmer 3s infinite;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030712; /* Deep Dark */
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-cyan-400 via-indigo-500 to-pink-500;
+  }
+}
