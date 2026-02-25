@@ -6,5 +6,6 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   image: string;
+  demoUrl: string;
 }
 // ... keep your Skill interface here too
