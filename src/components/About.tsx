@@ -37,8 +37,6 @@ const About = () => {
                 TypeScript, Tailwind CSS, and modern JavaScript. My focus is on creating intuitive user experiences, 
                 writing clean and maintainable code, optimizing performance, and translating designs into scalable 
                 interfaces that meet both user and business needs.
-              </p>
-              <p className="text-slate-600 text-sm leading-relaxed">
                 I continuously refine my frontend development skills by studying industry best practices, improving 
                 application architecture, and staying up to date with modern web technologies and development workflows.
               </p>
@@ -75,6 +73,9 @@ const About = () => {
                   and maintaining complete software solutions. Alongside frontend expertise, I am actively expanding my 
                   knowledge in backend development with NestJS, API design, authentication systems, database management, 
                   cloud platforms, DevOps practices, CI/CD pipelines, and software architecture.
+                  I am also developing skills in Quality Assurance (QA), automated testing, and software reliability to ensure 
+                  applications are not only functional but also secure, scalable, and maintainable. My objective is to understand 
+                  the entire software development lifecycle—from planning and development to testing, deployment, and continuous improvement.
                 </p>
               </div>
 
@@ -95,12 +96,12 @@ const About = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-slate-900 font-bold">
                     <Database size={18} className="text-blue-600" />
-                    <h4>QA, DevOps & Cloud</h4>
+                    <h4>Databases & DevOps</h4>
                   </div>
                   <ul className="text-sm text-slate-500 space-y-1 list-disc list-inside">
-                    <li>Automated Testing & QA</li>
+                    <li>MongoDB & PostgreSQL</li>
                     <li>Cloud Platforms & CI/CD</li>
-                    <li>Software Reliability</li>
+                    <li>QA & Automated Testing</li>
                   </ul>
                 </div>
               </div>
