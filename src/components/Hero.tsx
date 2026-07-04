@@ -3,23 +3,23 @@ import { me } from '../data/config';
 import { ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
 
 const Hero = () => {
-  const displayName = me?.name || "Natenael Temesgen";
+  const displayName = me?.name || 'Natenael Temesgen';
   const nameChars = Array.from(displayName);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 bg-slate-900 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
-        
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+
         <div className="z-10">
           <div className="mb-8">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="text-xs md:text-sm font-black text-cyan-400 uppercase tracking-[0.5em] mb-6 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"
             >
               Full-Stack Software Developer
             </motion.p>
-            
+
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[1.1] mb-6">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
@@ -41,20 +41,20 @@ const Hero = () => {
                   key={`${char}-${index}`}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
+                  transition={{
                     duration: 0.1,
                     delay: 0.4 + index * 0.04,
-                    ease: "easeOut"
+                    ease: 'easeOut',
                   }}
                   className="inline-block cursor-default py-1 text-white"
                 >
-                  {char === " " ? "\u00A0" : char}
+                  {char === ' ' ? '\u00A0' : char}
                 </motion.span>
               ))}
             </motion.h2>
           </div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
@@ -63,7 +63,7 @@ const Hero = () => {
             {me?.description}
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
@@ -80,7 +80,7 @@ const Hero = () => {
                 <Twitter size={28} />
               </a>
             </div>
-            
+
             <a href="#projects" className="group relative flex items-center gap-3 px-10 py-5 bg-white text-black rounded-full font-black transition-all hover:scale-105">
               <span>View Projects</span>
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
@@ -88,26 +88,31 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="relative flex justify-center md:justify-end">
+        {/* Portrait — clean photo, no cutout filters */}
+        <div className="relative flex items-end justify-center md:justify-end min-h-[420px] md:min-h-[560px]">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative w-72 h-72 md:w-96 md:h-96 group"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full flex justify-center md:justify-end"
           >
-            <div className="absolute -inset-4 bg-linear-to-tr from-cyan-500 via-purple-500 to-pink-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-60 transition-opacity duration-500" />
-            
-            <div className="relative w-full h-full overflow-hidden rounded-full border-4 border-white/10 bg-slate-800 shadow-2xl transition-all duration-500 group-hover:border-cyan-400/50">
-              <img 
-                src={me.profileImage} 
-                alt="Natenael Temesgen" 
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                className="w-full h-full object-cover opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-[opacity,filter] duration-700" 
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-cyan-900/20 to-transparent opacity-60 group-hover:opacity-0 transition-opacity duration-500" />
-            </div>
+            <div className="absolute bottom-[18%] right-[5%] w-56 h-56 md:w-72 md:h-72 bg-cyan-500/25 rounded-full blur-[80px] pointer-events-none" />
+
+            <img
+              src={me.profileImage}
+              alt={me.name}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="relative z-10 h-[min(78vh,720px)] md:h-[min(88vh,820px)] w-auto max-w-full object-contain object-bottom select-none pointer-events-none"
+              style={{
+                WebkitMaskImage:
+                  'radial-gradient(ellipse 75% 88% at 50% 42%, #000 50%, transparent 100%)',
+                maskImage:
+                  'radial-gradient(ellipse 75% 88% at 50% 42%, #000 50%, transparent 100%)',
+                filter: 'brightness(1.12) contrast(1.06) saturate(1.05)',
+              }}
+            />
           </motion.div>
         </div>
 

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Download, Rocket, Target, Sprout } from 'lucide-react';
 import { me } from '../data/config';
+import TechBadge from './ui/TechBadge';
 
 const currentFocusTech = [
   'Next.js 15',
@@ -105,12 +106,7 @@ const About = () => {
               </p>
               <div className="flex flex-wrap gap-2">
                 {currentFocusTech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 bg-white/5 text-slate-300 text-xs font-bold rounded-full border border-white/5 hover:border-cyan-500/50 hover:text-white transition-all"
-                  >
-                    {tech}
-                  </span>
+                  <TechBadge key={tech} name={tech} size="md" />
                 ))}
               </div>
               <p className="text-slate-500 text-sm mt-6 leading-relaxed">
@@ -130,12 +126,7 @@ const About = () => {
               </p>
               <div className="flex flex-wrap gap-2">
                 {futureGoals.map((goal) => (
-                  <span
-                    key={goal}
-                    className="px-3 py-1.5 bg-white/5 text-slate-300 text-xs font-bold rounded-full border border-white/5 hover:border-indigo-500/50 hover:text-white transition-all"
-                  >
-                    {goal}
-                  </span>
+                  <TechBadge key={goal} name={goal} size="md" />
                 ))}
               </div>
               <p className="text-slate-500 text-sm mt-6 leading-relaxed">

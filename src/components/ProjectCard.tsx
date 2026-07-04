@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import type { Project } from '../types';
 import { Star } from 'lucide-react';
+import TechBadge from './ui/TechBadge';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -30,12 +31,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="p-6 relative">
         <div className="flex flex-wrap gap-2 mb-4">
           {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 bg-white/5 text-cyan-400 text-[9px] font-black rounded-full uppercase tracking-widest border border-white/5 group-hover:border-cyan-500/30 transition-colors"
-            >
-              {tech}
-            </span>
+            <TechBadge key={tech} name={tech} size="sm" />
           ))}
         </div>
 
