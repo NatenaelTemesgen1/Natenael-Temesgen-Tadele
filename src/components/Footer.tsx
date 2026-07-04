@@ -22,7 +22,7 @@ const Footer = () => {
               NATENAEL<span className="text-cyan-400">.</span>T
             </span>
             <p className="mt-6 text-sm leading-relaxed font-light">
-              Designing and developing robust digital solutions with a focus on clean code and high-performance architectures.
+              Building scalable software with modern technologies, clean architecture, and a passion for continuous learning.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-black mb-8 uppercase text-[10px] tracking-[0.3em]">Directory</h4>
             <ul className="space-y-4 text-sm font-medium">
-              {['home', 'about', 'projects', 'skills', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'skills', 'experience', 'contact'].map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} className="hover:text-cyan-400 transition-colors capitalize">
                     {item}
@@ -44,9 +44,9 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-black mb-8 uppercase text-[10px] tracking-[0.3em]">Capabilities</h4>
             <ul className="space-y-4 text-sm font-medium">
-              <li className="hover:text-indigo-400 transition-colors cursor-default">Frontend Development</li>
-              <li className="hover:text-indigo-400 transition-colors cursor-default">Backend Systems</li>
-              <li className="hover:text-indigo-400 transition-colors cursor-default">Network Infrastructure</li>
+              <li className="hover:text-indigo-400 transition-colors cursor-default">Full-Stack Development</li>
+              <li className="hover:text-indigo-400 transition-colors cursor-default">React & Next.js</li>
+              <li className="hover:text-indigo-400 transition-colors cursor-default">NestJS & REST APIs</li>
               <li className="hover:text-indigo-400 transition-colors cursor-default">Database Design</li>
             </ul>
           </div>

@@ -29,10 +29,12 @@ const Projects = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="bg-slate-900/40 border-l-4 border-indigo-500 p-6 md:p-8 rounded-3xl mb-12 max-w-4xl backdrop-blur-md relative group overflow-hidden"
+          viewport={{ once: true }}
+          className="bg-slate-900/40 border-l-4 border-indigo-500 p-6 md:p-8 rounded-3xl mb-12 max-w-4xl backdrop-blur-md"
         >
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed italic font-light relative z-10">
-            "I have developed multiple web and desktop applications... focus on solving real-world problems."
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light">
+            A collection of full-stack applications, enterprise contributions, and academic projects
+            built with modern technologies and production-ready architecture.
           </p>
         </motion.div>
 

@@ -1,122 +1,162 @@
 import { motion } from 'framer-motion';
-import { Download, Code2, Database, Rocket, Target } from 'lucide-react';
+import { Download, Rocket, Target, Sprout } from 'lucide-react';
 import { me } from '../data/config';
+
+const currentFocusTech = [
+  'Next.js 15',
+  'React 19',
+  'TypeScript',
+  'NestJS',
+  'PostgreSQL',
+  'Prisma ORM',
+  'Redis',
+  'Socket.IO',
+  'REST APIs',
+  'Authentication & Authorization',
+  'AWS Deployment',
+  'Performance Optimization',
+];
+
+const futureGoals = [
+  'Cloud Computing (AWS)',
+  'Docker',
+  'CI/CD',
+  'System Design',
+  'Software Architecture',
+  'Automated Testing',
+  'Quality Assurance',
+  'Distributed Systems',
+  'Microservices',
+  'DevOps',
+];
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-slate-50 px-4">
+    <section id="about" className="py-24 bg-slate-900 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Section Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">💻 About Me</h2>
-          <div className="h-1.5 w-20 bg-blue-600 rounded-full"></div>
-        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <p className="text-xs font-black text-cyan-400 uppercase tracking-[0.5em] mb-4 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">
+            About
+          </p>
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">
+            About <span className="text-gradient">Me</span>
+          </h2>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          
-          {/* Left Column: The Story & CV */}
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-slate-700 leading-relaxed">
-              I am <span className="font-bold text-slate-900">{me.name}</span>, a dedicated and growth-driven 
-              Frontend Web Developer passionate about building modern, responsive, and user-friendly web applications.
-            </p>
-            
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
-              <div className="flex items-center gap-3 text-blue-600 font-bold">
-                <Target size={20} />
-                <h3>Current Focus: Frontend Engineering</h3>
-              </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                I specialize in building modern, responsive, and accessible web applications using React, Next.js, 
-                TypeScript, Tailwind CSS, and modern JavaScript. My focus is on creating intuitive user experiences, 
-                writing clean and maintainable code, optimizing performance, and translating designs into scalable 
-                interfaces that meet both user and business needs.
-                I continuously refine my frontend development skills by studying industry best practices, improving 
-                application architecture, and staying up to date with modern web technologies and development workflows.
+            <div className="space-y-4 text-slate-300 leading-relaxed">
+              <p>
+                I'm <span className="font-bold text-white">{me.name}</span>, a Full-Stack Software Developer
+                passionate about building production-ready web applications that solve real business problems.
+              </p>
+              <p>
+                I specialize in modern JavaScript and TypeScript ecosystems, developing scalable frontend interfaces
+                with React and Next.js while building secure backend services using NestJS, Express.js, and PostgreSQL.
+              </p>
+              <p>
+                During my internship at IE Networks Solutions, I've been contributing to enterprise software by
+                implementing real-world features, improving user experience, integrating REST APIs, and working within
+                Agile development workflows.
+              </p>
+              <p>
+                I enjoy writing clean, maintainable code, learning new technologies, and continuously improving both
+                my technical and problem-solving skills.
               </p>
             </div>
 
             <div className="pt-4">
-              <a 
-                href={me.cvLink} 
+              <a
+                href={me.cvLink}
                 download="Natenael_Temesgen_CV.pdf"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-all shadow-lg shadow-slate-200"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-2xl font-black hover:scale-105 transition-all"
               >
                 <Download size={20} /> Download CV
               </a>
             </div>
           </motion.div>
 
-          {/* Right Column: The Roadmap */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="relative pl-8 border-l-2 border-blue-200 space-y-10">
-              
-              {/* Future Goal Section */}
-              <div className="relative">
-                <div className="absolute -left-10 top-0 bg-blue-600 p-2 rounded-full text-white">
-                  <Rocket size={16} />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">🚀 Future Goal: Full-Stack Software Engineer & Quality-Focused Developer</h3>
-                <p className="text-slate-600 text-sm">
-                  My long-term goal is to become a well-rounded software engineer capable of building, testing, deploying, 
-                  and maintaining complete software solutions. Alongside frontend expertise, I am actively expanding my 
-                  knowledge in backend development with NestJS, API design, authentication systems, database management, 
-                  cloud platforms, DevOps practices, CI/CD pipelines, and software architecture.
-                  I am also developing skills in Quality Assurance (QA), automated testing, and software reliability to ensure 
-                  applications are not only functional but also secure, scalable, and maintainable. My objective is to understand 
-                  the entire software development lifecycle—from planning and development to testing, deployment, and continuous improvement.
-                </p>
+            {/* Current Focus */}
+            <div className="bg-[#0b0f1a] p-6 md:p-8 rounded-3xl border border-white/5">
+              <div className="flex items-center gap-3 text-cyan-400 font-black mb-4">
+                <Rocket size={20} />
+                <h3 className="uppercase tracking-widest text-sm">Current Focus</h3>
               </div>
-
-              {/* Backend Roadmap */}
-              <div className="grid sm:grid-cols-2 gap-6 pt-4">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-slate-900 font-bold">
-                    <Code2 size={18} className="text-blue-600" />
-                    <h4>Backend & APIs</h4>
-                  </div>
-                  <ul className="text-sm text-slate-500 space-y-1 list-disc list-inside">
-                    <li>NestJS & API Design</li>
-                    <li>Authentication Systems</li>
-                    <li>Software Architecture</li>
-                  </ul>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-slate-900 font-bold">
-                    <Database size={18} className="text-blue-600" />
-                    <h4>Databases & DevOps</h4>
-                  </div>
-                  <ul className="text-sm text-slate-500 space-y-1 list-disc list-inside">
-                    <li>MongoDB & PostgreSQL</li>
-                    <li>Cloud Platforms & CI/CD</li>
-                    <li>QA & Automated Testing</li>
-                  </ul>
-                </div>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Currently I'm focused on building production-grade full-stack applications using:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {currentFocusTech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 bg-white/5 text-slate-300 text-xs font-bold rounded-full border border-white/5 hover:border-cyan-500/50 hover:text-white transition-all"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
+              <p className="text-slate-500 text-sm mt-6 leading-relaxed">
+                My goal is to create software that is scalable, secure, maintainable, and enjoyable to use.
+              </p>
+            </div>
 
-              {/* Mindset */}
-              <div className="bg-blue-600 p-6 rounded-2xl text-white">
-                <h4 className="font-bold mb-2 flex items-center gap-2">🌱 Mindset & Growth</h4>
-                <p className="text-sm opacity-90 leading-relaxed">
-                  I believe exceptional software is built through continuous learning, curiosity, and attention to detail. 
-                  Every challenge is an opportunity to improve, every project is a chance to grow, and every line of code 
-                  is a step toward mastery. I am committed to developing solutions that combine technical excellence, great 
-                  user experience, and long-term business value while continuously evolving as a software engineer.
-                </p>
+            {/* Future Goals */}
+            <div className="bg-[#0b0f1a] p-6 md:p-8 rounded-3xl border border-white/5">
+              <div className="flex items-center gap-3 text-indigo-400 font-black mb-4">
+                <Target size={20} />
+                <h3 className="uppercase tracking-widest text-sm">Future Goal</h3>
               </div>
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                I aim to become a highly skilled Software Engineer capable of designing complete software systems
+                from planning to deployment. I'm actively expanding my knowledge in:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {futureGoals.map((goal) => (
+                  <span
+                    key={goal}
+                    className="px-3 py-1.5 bg-white/5 text-slate-300 text-xs font-bold rounded-full border border-white/5 hover:border-indigo-500/50 hover:text-white transition-all"
+                  >
+                    {goal}
+                  </span>
+                ))}
+              </div>
+              <p className="text-slate-500 text-sm mt-6 leading-relaxed">
+                I believe great software is built through continuous learning, collaboration, and attention to detail.
+              </p>
+            </div>
 
+            {/* Mindset */}
+            <div className="bg-linear-to-r from-cyan-600/20 to-indigo-600/20 p-6 md:p-8 rounded-3xl border border-cyan-500/20">
+              <div className="flex items-center gap-3 text-cyan-400 font-black mb-4">
+                <Sprout size={20} />
+                <h3 className="uppercase tracking-widest text-sm">Mindset</h3>
+              </div>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                I enjoy solving complex problems and turning ideas into reliable software. Every project is an
+                opportunity to improve my engineering skills, write cleaner code, and build systems that create real
+                value for users.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed mt-4">
+                I'm committed to lifelong learning and continuously exploring better ways to build modern applications.
+              </p>
             </div>
           </motion.div>
 

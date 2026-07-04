@@ -1,19 +1,50 @@
-
 export const skillCategories = {
   frontend: [
-    { name: "React & Vite", level: 90 },
-    { name: "TypeScript / JS (ES6+)", level: 85 },
-    { name: "Tailwind CSS & CSS3", level: 95 },
-    { name: "HTML5 & UI/UX", level: 90 }
+    "React",
+    "Next.js 14/15",
+    "TypeScript",
+    "JavaScript (ES6+)",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+    "Responsive Design",
+    "React Query",
   ],
   backend: [
-    { name: "Python (Django)", level: 80 },
-    { name: "PHP", level: 85 },
-    { name: "MySQL / SQL", level: 85 },
-    { name: "Java (OOP/JavaFX)", level: 75 }
+    "NestJS",
+    "Express.js",
+    "Node.js",
+    "REST APIs",
+    "PHP",
+    "Django",
   ],
-  infrastructure: [
-    "LAN & TCP/IP", "Router/Switch Config", "Hardware Diagnostics", 
-    "Git & GitHub", "XAMPP", "Linux CLI", "Windows Server"
-  ]
+  database: [
+    "PostgreSQL",
+    "MySQL",
+    "MongoDB",
+    "Prisma ORM",
+  ],
+  authentication: [
+    "JWT",
+    "OAuth2",
+    "NextAuth",
+    "Role-Based Access Control",
+  ],
+  cloudDevOps: [
+    "AWS",
+    "Docker",
+    "Redis",
+    "Git",
+    "GitHub",
+    "Linux",
+    "Vercel",
+  ],
+  testingQA: [
+    "Manual Testing",
+    "SDLC",
+    "STLC",
+    "Agile",
+    "API Testing",
+    "Postman",
+  ],
 };

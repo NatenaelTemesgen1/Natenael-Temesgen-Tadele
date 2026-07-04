@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Project } from '../types';
+import { Star } from 'lucide-react';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -12,18 +13,27 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="absolute -inset-1 bg-linear-to-r from-cyan-500 to-indigo-600 rounded-[2.1rem] blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
 
       <div className="relative h-52 overflow-hidden bg-slate-800">
-        <img 
-          src={project.image} 
-          alt={project.title} 
+        <img
+          src={project.image}
+          alt={project.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#0b0f1a] via-transparent to-transparent opacity-80" />
+        {project.featured && (
+          <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-cyan-500/90 text-black text-[10px] font-black rounded-full uppercase tracking-widest">
+            <Star size={12} fill="currentColor" />
+            Featured
+          </div>
+        )}
       </div>
 
       <div className="p-6 relative">
         <div className="flex flex-wrap gap-2 mb-4">
           {project.techStack.map((tech) => (
-            <span key={tech} className="px-3 py-1 bg-white/5 text-cyan-400 text-[9px] font-black rounded-full uppercase tracking-widest border border-white/5 group-hover:border-cyan-500/30 transition-colors">
+            <span
+              key={tech}
+              className="px-3 py-1 bg-white/5 text-cyan-400 text-[9px] font-black rounded-full uppercase tracking-widest border border-white/5 group-hover:border-cyan-500/30 transition-colors"
+            >
               {tech}
             </span>
           ))}
@@ -32,16 +42,28 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h3 className="text-2xl font-black text-white mb-2 tracking-tighter group-hover:text-gradient transition-all">
           {project.title}
         </h3>
-        
-        <p className="text-slate-400 text-xs leading-relaxed font-medium line-clamp-2 mb-6">
+
+        <p className="text-slate-400 text-xs leading-relaxed font-medium mb-4">
           {project.description}
         </p>
 
-        {/* --- FR-8: GitHub and Live Demo Links --- */}
+        {project.highlights.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.highlights.map((highlight) => (
+              <span
+                key={highlight}
+                className="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 text-[9px] font-bold rounded-lg border border-indigo-500/20"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
+        )}
+
         <div className="flex items-center gap-4">
-          <a 
-            href={project.githubUrl} 
-            target="_blank" 
+          <a
+            href={project.githubUrl}
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[10px] font-black text-slate-300 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors"
           >
@@ -49,9 +71,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
             Code
           </a>
 
-          <a 
-            href={project.demoUrl} 
-            target="_blank" 
+          <a
+            href={project.demoUrl}
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[10px] font-black text-indigo-400 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors"
           >
