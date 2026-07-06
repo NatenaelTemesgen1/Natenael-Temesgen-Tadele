@@ -1,163 +1,159 @@
-/** Devicon paths — https://devicon.dev */
+/** Devicon + Simple Icons — verified CDN paths */
 
 export interface TechIconConfig {
   name: string;
-  icon: string;
+  devicon?: string;
+  simpleIcon?: string;
 }
 
 export const deviconUrl = (path: string) =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}.svg`;
 
-/** Lookup by exact or partial skill / tech name */
-export const techIconMap: Record<string, string> = {
-  React: 'react/react-original',
-  'React 19': 'react/react-original',
-  'React Query': 'react/react-original',
-  'Next.js': 'nextjs/nextjs-original',
-  'Next.js 14': 'nextjs/nextjs-original',
-  'Next.js 14/15': 'nextjs/nextjs-original',
-  'Next.js 15': 'nextjs/nextjs-original',
-  TypeScript: 'typescript/typescript-original',
-  'JavaScript (ES6+)': 'javascript/javascript-original',
-  JavaScript: 'javascript/javascript-original',
-  HTML5: 'html5/html5-original',
-  CSS3: 'css3/css3-original',
-  'Tailwind CSS': 'tailwindcss/tailwindcss-plain',
-  'Responsive Design': 'bootstrap/bootstrap-original',
-  NestJS: 'nestjs/nestjs-plain',
-  'Express.js': 'express/express-original',
-  Express: 'express/express-original',
-  'Node.js': 'nodejs/nodejs-original',
-  'REST APIs': 'swagger/swagger-original',
-  PHP: 'php/php-original',
-  Django: 'django/django-plain',
-  PostgreSQL: 'postgresql/postgresql-original',
-  MySQL: 'mysql/mysql-original',
-  MongoDB: 'mongodb/mongodb-original',
-  'Prisma ORM': 'prisma/prisma-original',
-  Prisma: 'prisma/prisma-original',
-  JWT: 'json/json-original',
-  OAuth2: 'auth0/auth0-original',
-  NextAuth: 'nextauth/nextauth-original',
-  'Role-Based Access Control': 'firebase/firebase-plain',
-  RBAC: 'firebase/firebase-plain',
-  AWS: 'amazonwebservices/amazonwebservices-original',
-  'AWS Deployment': 'amazonwebservices/amazonwebservices-original',
-  'Cloud Computing (AWS)': 'amazonwebservices/amazonwebservices-original',
-  Docker: 'docker/docker-original',
-  Redis: 'redis/redis-original',
-  Git: 'git/git-original',
-  GitHub: 'github/github-original',
-  Linux: 'linux/linux-original',
-  Vercel: 'vercel/vercel-original',
-  'Socket.IO': 'socketio/socketio-original',
-  'Manual Testing': 'cypress/cypress-plain',
-  SDLC: 'azure/azure-original',
-  STLC: 'gitlab/gitlab-original',
-  Agile: 'jira/jira-original',
-  'API Testing': 'insomnia/insomnia-original',
-  Postman: 'postman/postman-original',
-  'CI/CD': 'githubactions/githubactions-original',
-  'System Design': 'graphql/graphql-plain',
-  'Software Architecture': 'kubernetes/kubernetes-plain',
-  'Automated Testing': 'jest/jest-plain',
-  'Quality Assurance': 'jest/jest-plain',
-  'Distributed Systems': 'kubernetes/kubernetes-plain',
-  Microservices: 'docker/docker-original',
-  DevOps: 'jenkins/jenkins-original',
-  'Authentication & Authorization': 'auth0/auth0-original',
-  'Performance Optimization': 'nginx/nginx-original',
-  Python: 'python/python-original',
-  Java: 'java/java-original',
-  JavaFX: 'java/java-original',
+export const simpleIconUrl = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
+
+const iconByName: Record<string, TechIconConfig> = {
+  React: { name: 'React', devicon: 'react/react-original' },
+  'React 19': { name: 'React 19', devicon: 'react/react-original' },
+  'React Query': { name: 'React Query', devicon: 'react/react-original', simpleIcon: 'reactquery' },
+  'Next.js': { name: 'Next.js', devicon: 'nextjs/nextjs-original' },
+  'Next.js 14': { name: 'Next.js 14', devicon: 'nextjs/nextjs-original' },
+  'Next.js 14/15': { name: 'Next.js 14/15', devicon: 'nextjs/nextjs-original' },
+  'Next.js 15': { name: 'Next.js 15', devicon: 'nextjs/nextjs-original' },
+  TypeScript: { name: 'TypeScript', devicon: 'typescript/typescript-original' },
+  'JavaScript (ES6+)': { name: 'JavaScript (ES6+)', devicon: 'javascript/javascript-original' },
+  JavaScript: { name: 'JavaScript', devicon: 'javascript/javascript-original' },
+  HTML5: { name: 'HTML5', devicon: 'html5/html5-original' },
+  CSS3: { name: 'CSS3', devicon: 'css3/css3-original' },
+  'Tailwind CSS': { name: 'Tailwind CSS', devicon: 'tailwindcss/tailwindcss-original', simpleIcon: 'tailwindcss' },
+  'Responsive Design': { name: 'Responsive Design', devicon: 'css3/css3-original', simpleIcon: 'figma' },
+  NestJS: { name: 'NestJS', devicon: 'nestjs/nestjs-original', simpleIcon: 'nestjs' },
+  'Express.js': { name: 'Express.js', devicon: 'express/express-original', simpleIcon: 'express' },
+  Express: { name: 'Express', devicon: 'express/express-original', simpleIcon: 'express' },
+  'Node.js': { name: 'Node.js', devicon: 'nodejs/nodejs-original' },
+  'REST APIs': { name: 'REST APIs', devicon: 'swagger/swagger-original' },
+  PHP: { name: 'PHP', devicon: 'php/php-original' },
+  Django: { name: 'Django', devicon: 'django/django-plain' },
+  PostgreSQL: { name: 'PostgreSQL', devicon: 'postgresql/postgresql-original' },
+  MySQL: { name: 'MySQL', devicon: 'mysql/mysql-original' },
+  MongoDB: { name: 'MongoDB', devicon: 'mongodb/mongodb-original' },
+  'Prisma ORM': { name: 'Prisma ORM', devicon: 'prisma/prisma-original', simpleIcon: 'prisma' },
+  Prisma: { name: 'Prisma', devicon: 'prisma/prisma-original', simpleIcon: 'prisma' },
+  JWT: { name: 'JWT', simpleIcon: 'jsonwebtokens' },
+  OAuth2: { name: 'OAuth2', simpleIcon: 'openid' },
+  NextAuth: { name: 'NextAuth', simpleIcon: 'openid' },
+  'Role-Based Access Control': { name: 'Role-Based Access Control', simpleIcon: 'keycloak' },
+  RBAC: { name: 'RBAC', simpleIcon: 'keycloak' },
+  AWS: { name: 'AWS', devicon: 'amazonwebservices/amazonwebservices-plain-wordmark' },
+  'AWS Deployment': { name: 'AWS Deployment', devicon: 'amazonwebservices/amazonwebservices-plain-wordmark' },
+  'Cloud Computing (AWS)': { name: 'Cloud Computing (AWS)', devicon: 'amazonwebservices/amazonwebservices-plain-wordmark' },
+  Docker: { name: 'Docker', devicon: 'docker/docker-original' },
+  Redis: { name: 'Redis', devicon: 'redis/redis-original' },
+  Git: { name: 'Git', devicon: 'git/git-original' },
+  GitHub: { name: 'GitHub', devicon: 'github/github-original' },
+  Linux: { name: 'Linux', devicon: 'linux/linux-original' },
+  Vercel: { name: 'Vercel', devicon: 'vercel/vercel-original', simpleIcon: 'vercel' },
+  'Socket.IO': { name: 'Socket.IO', devicon: 'socketio/socketio-original', simpleIcon: 'socketdotio' },
+  'Manual Testing': { name: 'Manual Testing', simpleIcon: 'selenium' },
+  SDLC: { name: 'SDLC', devicon: 'azure/azure-original', simpleIcon: 'confluence' },
+  STLC: { name: 'STLC', devicon: 'gitlab/gitlab-original', simpleIcon: 'testinglibrary' },
+  Agile: { name: 'Agile', devicon: 'jira/jira-original', simpleIcon: 'jira' },
+  'API Testing': { name: 'API Testing', devicon: 'insomnia/insomnia-original', simpleIcon: 'insomnia' },
+  Postman: { name: 'Postman', devicon: 'postman/postman-original' },
+  'CI/CD': { name: 'CI/CD', devicon: 'githubactions/githubactions-original' },
+  'System Design': { name: 'System Design', devicon: 'graphql/graphql-plain' },
+  'Software Architecture': { name: 'Software Architecture', devicon: 'kubernetes/kubernetes-plain' },
+  'Automated Testing': { name: 'Automated Testing', devicon: 'jest/jest-plain', simpleIcon: 'cypress' },
+  'Quality Assurance': { name: 'Quality Assurance', devicon: 'jest/jest-plain', simpleIcon: 'cypress' },
+  'Distributed Systems': { name: 'Distributed Systems', devicon: 'kubernetes/kubernetes-plain' },
+  Microservices: { name: 'Microservices', devicon: 'docker/docker-original' },
+  DevOps: { name: 'DevOps', devicon: 'jenkins/jenkins-original' },
+  'Authentication & Authorization': { name: 'Authentication & Authorization', simpleIcon: 'keycloak' },
+  'Performance Optimization': { name: 'Performance Optimization', devicon: 'nginx/nginx-original' },
+  Python: { name: 'Python', devicon: 'python/python-original' },
+  Java: { name: 'Java', devicon: 'java/java-original' },
+  JavaFX: { name: 'JavaFX', devicon: 'java/java-original' },
 };
 
-export const getTechIcon = (name: string): string => {
-  if (techIconMap[name]) return techIconMap[name];
+export const getTechIconConfig = (name: string): TechIconConfig => {
+  if (iconByName[name]) return iconByName[name];
 
   const normalized = name.toLowerCase();
-  const match = Object.entries(techIconMap).find(([key]) => {
+  const match = Object.entries(iconByName).find(([key]) => {
     const k = key.toLowerCase();
     return normalized.includes(k) || k.includes(normalized);
   });
 
-  return match?.[1] ?? 'devicon/devicon-original';
+  return match?.[1] ?? { name, devicon: 'devicon/devicon-original' };
 };
+
+/** @deprecated use getTechIconConfig — kept for TechBadge compatibility */
+export const getTechIcon = (name: string): string => {
+  const config = getTechIconConfig(name);
+  return config.devicon ?? config.simpleIcon ?? 'devicon/devicon-original';
+};
+
+export const techIconMap: Record<string, string> = Object.fromEntries(
+  Object.entries(iconByName).map(([key, value]) => [key, value.devicon ?? value.simpleIcon ?? ''])
+);
+
+const toItem = (config: TechIconConfig) => ({
+  name: config.name,
+  devicon: config.devicon,
+  simpleIcon: config.simpleIcon,
+});
 
 export const skillCategoryGroups = [
   {
     label: 'Frontend',
     items: [
-      { name: 'React', icon: 'react/react-original' },
-      { name: 'Next.js 14/15', icon: 'nextjs/nextjs-original' },
-      { name: 'TypeScript', icon: 'typescript/typescript-original' },
-      { name: 'JavaScript (ES6+)', icon: 'javascript/javascript-original' },
-      { name: 'HTML5', icon: 'html5/html5-original' },
-      { name: 'CSS3', icon: 'css3/css3-original' },
-      { name: 'Tailwind CSS', icon: 'tailwindcss/tailwindcss-plain' },
-      { name: 'Responsive Design', icon: 'bootstrap/bootstrap-original' },
-      { name: 'React Query', icon: 'react/react-original' },
-    ],
+      'React',
+      'Next.js 14/15',
+      'TypeScript',
+      'JavaScript (ES6+)',
+      'HTML5',
+      'CSS3',
+      'Tailwind CSS',
+      'Responsive Design',
+      'React Query',
+    ].map((name) => toItem(getTechIconConfig(name))),
   },
   {
     label: 'Backend',
-    items: [
-      { name: 'NestJS', icon: 'nestjs/nestjs-plain' },
-      { name: 'Express.js', icon: 'express/express-original' },
-      { name: 'Node.js', icon: 'nodejs/nodejs-original' },
-      { name: 'REST APIs', icon: 'swagger/swagger-original' },
-      { name: 'PHP', icon: 'php/php-original' },
-      { name: 'Django', icon: 'django/django-plain' },
-    ],
+    items: ['NestJS', 'Express.js', 'Node.js', 'REST APIs', 'PHP', 'Django'].map((name) =>
+      toItem(getTechIconConfig(name))
+    ),
   },
   {
     label: 'Database',
-    items: [
-      { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
-      { name: 'MySQL', icon: 'mysql/mysql-original' },
-      { name: 'MongoDB', icon: 'mongodb/mongodb-original' },
-      { name: 'Prisma ORM', icon: 'prisma/prisma-original' },
-    ],
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Prisma ORM'].map((name) =>
+      toItem(getTechIconConfig(name))
+    ),
   },
   {
     label: 'Authentication',
-    items: [
-      { name: 'JWT', icon: 'json/json-original' },
-      { name: 'OAuth2', icon: 'auth0/auth0-original' },
-      { name: 'NextAuth', icon: 'nextauth/nextauth-original' },
-      { name: 'Role-Based Access Control', icon: 'firebase/firebase-plain' },
-    ],
+    items: ['JWT', 'OAuth2', 'NextAuth', 'Role-Based Access Control'].map((name) =>
+      toItem(getTechIconConfig(name))
+    ),
   },
   {
     label: 'Cloud & DevOps',
-    items: [
-      { name: 'AWS', icon: 'amazonwebservices/amazonwebservices-original' },
-      { name: 'Docker', icon: 'docker/docker-original' },
-      { name: 'Redis', icon: 'redis/redis-original' },
-      { name: 'Git', icon: 'git/git-original' },
-      { name: 'GitHub', icon: 'github/github-original' },
-      { name: 'Linux', icon: 'linux/linux-original' },
-      { name: 'Vercel', icon: 'vercel/vercel-original' },
-    ],
+    items: ['AWS', 'Docker', 'Redis', 'Git', 'GitHub', 'Linux', 'Vercel'].map((name) =>
+      toItem(getTechIconConfig(name))
+    ),
   },
   {
     label: 'Testing & QA',
-    items: [
-      { name: 'Manual Testing', icon: 'cypress/cypress-plain' },
-      { name: 'SDLC', icon: 'azure/azure-original' },
-      { name: 'STLC', icon: 'gitlab/gitlab-original' },
-      { name: 'Agile', icon: 'jira/jira-original' },
-      { name: 'API Testing', icon: 'insomnia/insomnia-original' },
-      { name: 'Postman', icon: 'postman/postman-original' },
-    ],
+    items: ['Manual Testing', 'SDLC', 'STLC', 'Agile', 'API Testing', 'Postman'].map((name) =>
+      toItem(getTechIconConfig(name))
+    ),
   },
 ] as const;
 
 export const heroTechStack: TechIconConfig[] = [
-  { name: 'React', icon: 'react/react-original' },
-  { name: 'Next.js', icon: 'nextjs/nextjs-original' },
-  { name: 'TypeScript', icon: 'typescript/typescript-original' },
-  { name: 'NestJS', icon: 'nestjs/nestjs-plain' },
-  { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
-  { name: 'Docker', icon: 'docker/docker-original' },
+  getTechIconConfig('React'),
+  getTechIconConfig('Next.js'),
+  getTechIconConfig('TypeScript'),
+  getTechIconConfig('NestJS'),
+  getTechIconConfig('PostgreSQL'),
+  getTechIconConfig('Docker'),
 ];

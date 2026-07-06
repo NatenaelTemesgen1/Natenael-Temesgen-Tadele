@@ -1,9 +1,10 @@
-import { getTechIcon } from '../../data/techIcons';
+import { getTechIconConfig } from '../../data/techIcons';
 import { TechIconWithFallback } from './TechIcon';
 
 interface TechBadgeProps {
   name: string;
-  icon?: string;
+  devicon?: string;
+  simpleIcon?: string;
   size?: 'sm' | 'md';
   className?: string;
 }
@@ -13,16 +14,21 @@ const sizeStyles = {
   md: { icon: 16, text: 'text-[10px] md:text-xs', pad: 'px-2.5 py-1.5 gap-2', iconBox: 'w-5 h-5' },
 };
 
-const TechBadge = ({ name, icon, size = 'md', className = '' }: TechBadgeProps) => {
+const TechBadge = ({ name, devicon, simpleIcon, size = 'md', className = '' }: TechBadgeProps) => {
   const s = sizeStyles[size];
-  const iconPath = icon ?? getTechIcon(name);
+  const config = getTechIconConfig(name);
 
   return (
     <span
-      className={`inline-flex items-center ${s.pad} bg-white/5 text-slate-300 rounded-full border border-white/5 hover:border-cyan-500/50 hover:text-white transition-all font-bold ${s.text} ${className}`}
+      className={`inline-flex items-center ${s.pad} bg-white/5 text-slate-300 rounded-full border border-white/5 hover:border-cyan-500/50 hover:text-white transition-all font-bold ${s.text} light:bg-slate-100 light:text-slate-700 light:border-slate-200 light:hover:border-cyan-400 light:hover:text-slate-900 ${className}`}
     >
       <span className={`${s.iconBox} flex items-center justify-center shrink-0`}>
-        <TechIconWithFallback icon={iconPath} name={name} size={s.icon} />
+        <TechIconWithFallback
+          name={name}
+          devicon={devicon ?? config.devicon}
+          simpleIcon={simpleIcon ?? config.simpleIcon}
+          size={s.icon}
+        />
       </span>
       {name}
     </span>
